@@ -1,0 +1,16 @@
+{
+  "name": "amionline",
+  "version": "1.0.0",
+  "description": "A simple one-page app to check if the internet is working",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattharris5/amionline.git"
+  },
+  "author": "Matt Harris <matt@mattharr.is>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/mattharris5/amionline/issues"
+  },
+  "homepage": "https://github.com/mattharris5/amionline"
+}
