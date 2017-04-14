@@ -2,11 +2,11 @@
 
 var http = require("http");
 
-var port = 3000;
+var port = process.env.PORT || 5000;
 
-http.createServer(function(req, resp) {
-    resp.writeHead(200, {'Content-Type': 'text/html'});
-    resp.end(renderBody(req));
+http.createServer(function(request, response) {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end(renderBody(request));
 }).listen(port);
 
 console.log('Running on port ' + port);
@@ -17,20 +17,20 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function parseIpFromEvent(req) {
-  var ipAddr = req.headers["x-forwarded-for"];
+function parseIpFromEvent(request) {
+  var ipAddr = request.headers["x-forwarded-for"];
   if (ipAddr){
     var list = ipAddr.split(",");
     ipAddr = list[list.length-1];
   } else {
-    ipAddr = req.connection.remoteAddress;
+    ipAddr = request.connection.remoteAddress;
   }
   return ipAddr;
 }
 
-function renderBody(req) {
+function renderBody(request) {
     var currentTime = new Date().toLocaleTimeString(),
-        currentIp = parseIpFromEvent(req),
+        currentIp = parseIpFromEvent(request),
         icons = ['👍','😊','😃','😊','🎉','😎','🤑','😁','😺','👋','🌞','🌈','🍻','🚀','🎊','💯','✅','🆗','🆙']
 
     var html = `<!DOCTYPE html>
