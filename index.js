@@ -105,7 +105,7 @@ function renderBody(request) {
 
     <section class="main">
       <section class="content">
-        <h1>${icons[getRandomIntInclusive(0,icons.length)]}</h1>
+        <h1>${icons[getRandomIntInclusive(0,icons.length-1)]}</h1>
         <p class="lead">
           Yep, you're online.
         </p>
