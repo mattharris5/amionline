@@ -60,7 +60,7 @@ function renderBody(request) {
       }
       h1 {
         margin-bottom: 0;
-        font-size: 125px;
+        font-size: 120px;
       }
       p.lead {
         margin-top: 0;
