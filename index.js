@@ -118,7 +118,7 @@ function renderBody(request) {
         </p>
       </section>
     </section>
-    <script>$("#currentTime").textContent = new Date().toLocaleTimeString()</script>
+    <script>document.getElementById('currentTime').textContent = new Date().toLocaleTimeString();</script>
     </body>
     </html>
 `;
